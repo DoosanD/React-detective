@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  font-size: 25px;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height:100vh;
+    background:linear-gradient(to right top, #c5d8e9, #085eae);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    box-sizing:border-box;
+  
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 12px;
+}
+

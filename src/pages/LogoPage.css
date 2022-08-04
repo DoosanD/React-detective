@@ -1,0 +1,84 @@
+.body1 {
+    margin: 0;
+    height: 100%;
+
+    perspective:600px;
+    background: linear-gradient(-25deg, rgb(114, 142, 226) 0%, black 45%, rgb(136, 155, 232) 55%, black 100%)
+}
+
+.box-two {
+    transform: translateZ(0); 
+    position: absolute; top: 0; left:0; bottom: 0; right: 0;
+    mix-blend-mode: screen;
+}
+.box-one{
+    transform: translateZ(0); 
+    position: absolute; top: 0; left:0; bottom: 0; right: 0;
+    transform: scale(0.6);
+}
+.box-one, 
+.box-two {
+    perspective:600px;
+}
+.container-box{
+    width: 400px; height: 400px;
+    margin: -200px 0 0 -200px;
+    position: absolute;
+    top: 50%; left: 50%;
+}
+
+
+.box-two::before,
+.box-two::after,
+.box-one::before,
+.box-one::after{
+    width: 100%; height: 100%; 
+    content: ""; display: block; position: absolute;
+    -webkit-background-size:800% ;
+    background-size:800% ;
+    background-repeat: no-repeat;
+    background-position:0 0 ;
+    transform-origin: 50% 50% -200px;
+    animation-duration:5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    backface-visibility: hidden;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.5),transparent );
+}
+.box-two::before,
+.box-one::before{
+    animation-name: animate1;
+}
+.box-two::after,
+.box-one::after{
+    animation-name: animate2;
+}
+.box-one::before,
+.box-one::after{
+    background:url(Logo.jpg);
+    -webkit-background-composite: cover;
+    background-size: cover;
+    background-position: center center;
+    
+}
+@keyframes animate1 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to { 
+        transform: rotateY(-90deg);
+        background-position:-400% 0;
+    }
+    
+}
+ @keyframes animate2 {
+    from {
+        transform: rotateY(90deg);
+        background-position:400% 0;
+    }
+    to { 
+        transform: rotateY(0);
+        background-position:0 0;
+    }
+} 
